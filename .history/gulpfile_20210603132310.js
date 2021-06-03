@@ -6,7 +6,7 @@ const autoprefixer = require('gulp-autoprefixer');
 const uglify = require('gulp-uglify');
 const svgSprite = require('gulp-svg-sprite');
 
-const fileinclude = require('gulp-file-include');
+// const fileinclude = require('gulp-file-include');
 
 const imagemin = require('gulp-imagemin');
 const del = require('del');
@@ -36,16 +36,16 @@ function browsersync() {
   });
 }
 
-function htmlinclude() {
-  return src(['app/html/pages/index.html'])
-    .pipe(
-      fileinclude({
-        prefix: '@@',
-        basepath: '@file',
-      }),
-    )
-    .pipe(dest('app/'));
-}
+// function htmlinclude() {
+//   return src(['app/html/pages/index.html'])
+//     .pipe(
+//       fileinclude({
+//         prefix: '@@',
+//         basepath: '@file',
+//       }),
+//     )
+//     .pipe(dest('app/'));
+// }
 
 //конвертация в css
 function styles() {

@@ -6,7 +6,7 @@ const autoprefixer = require('gulp-autoprefixer');
 const uglify = require('gulp-uglify');
 const svgSprite = require('gulp-svg-sprite');
 
-const fileinclude = require('gulp-file-include');
+// const fileinclude = require('gulp-file-include');
 
 const imagemin = require('gulp-imagemin');
 const del = require('del');
@@ -36,16 +36,16 @@ function browsersync() {
   });
 }
 
-function htmlinclude() {
-  return src(['app/html/pages/index.html'])
-    .pipe(
-      fileinclude({
-        prefix: '@@',
-        basepath: '@file',
-      }),
-    )
-    .pipe(dest('app/'));
-}
+// function htmlinclude() {
+//   return src(['app/html/pages/index.html'])
+//     .pipe(
+//       fileinclude({
+//         prefix: '@@',
+//         basepath: '@file',
+//       }),
+//     )
+//     .pipe(dest('app/'));
+// }
 
 //конвертация в css
 function styles() {
@@ -111,13 +111,13 @@ exports.styles = styles; //запуск функции styles
 exports.scripts = scripts;
 exports.browsersync = browsersync;
 
-exports.htmlinclude = htmlinclude;
+// exports.htmlinclude = htmlinclude;
 
 exports.watching = watching;
 exports.images = images;
 exports.cleanDist = cleanDist;
 exports.build = series(cleanDist, images, build); //запускает глобально после команды build стерает папкуdist, конвертит images, после запускает default
 
-exports.default = parallel(htmlinclude, svgSprites, styles, scripts, browsersync, watching); //запускает функции
+exports.default = parallel(svgSprites, styles, scripts, browsersync, watching); //запускает функции
 
 //чтоб запустить сборку надо в консоль "gulp build"
