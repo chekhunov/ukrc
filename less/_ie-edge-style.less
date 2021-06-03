@@ -1,0 +1,50 @@
+@media (min-width: 1160px) {
+    
+    @supports (-ms-ime-align:auto) {
+        .main_button {
+            transition: background-color .4s;
+            
+            &:hover {
+                background-color: #E6E6FF;
+            }
+        }
+        
+        .main_button-color {
+            &:hover {
+                background-color: #4358FF;
+            }
+        }
+        
+        .important-to-us__item {
+            .main_button {
+                &:hover {
+                    background-color: #C9C9FF;
+                }
+            }
+        }
+    }
+}
+
+ @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    .main_button {
+        transition: background-color .4s;
+        
+        &:hover {
+            background-color: #E6E6FF;
+        }
+    }
+    
+    .main_button-color {
+        &:hover {
+            background-color: #4358FF;
+        }
+    }
+    
+    .important-to-us__item {
+        .main_button {
+            &:hover {
+                background-color: #C9C9FF;
+            }
+        }
+    }
+}

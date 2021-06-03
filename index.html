@@ -1,0 +1,1604 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>УкрКонсалтинг</title>
+    <link rel="stylesheet" href="./css/main.css">
+    <style>
+        .preloader {
+            position: fixed;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            top: 0;
+            left: 0;
+            z-index: 100;
+            height: 100%;
+            width: 100%;
+            background-color: #ffffff;
+            overflow: hidden;
+            animation-delay: 1s;
+            opacity: 1;
+            transition: opacity .4s, width .4s 1.4s, height .4s 1.4s;
+        }
+        .preloader.hide {
+            opacity: 0;
+            width: 0px;
+            height: 0px;
+        }
+        .preloader img {
+            width: 250px;
+        }
+        .preloader .hide-line {
+            width: 250px;
+            position: relative;
+        }
+        .preloader .hide-line::before {
+            content: "";
+            position: absolute;
+            top: -2px;
+            width: 100%;
+            height: 10px;
+            background-color: #ffffff;
+        }
+    </style>
+     <script>
+        window.onload = function() {
+            let preloader = document.querySelector(".preloader");
+            preloader.classList.add('hide');
+        }
+    </script>
+</head>
+<body>
+    <div class="preloader">
+        <div class="hide-line">
+            <img src="./img/Preloader..gif" aria-hidden="true">
+        </div>
+    </div>
+    <div class="background-decor">
+        <div class="background-decor__inner"></div>
+    </div>
+    <div id="app">
+         <header class="header">
+            <div class="header__wrapper">
+                <nav class="header-nav">
+                    <a href="#" class="header-logo">
+                        <img src="./img/logo.png" alt="УкрКонсалтинг">
+                    </a>
+                    <button class="header-burger"><span></span></button>
+                    <ul class="header__list">
+                        <li class="header__item drop-item">
+                            <div class="wrapper">
+                                <span class="text">Меню</span>
+                                <span class="icon-drop"></span>
+                            </div>
+                            <ul class="burger-menu__list">
+                                <li class="burger-menu__item">
+                                    <a href="#">Наши клиенты</a>
+                                </li>
+                                <li class="burger-menu__item">
+                                    <a href="#">Сотрудничество</a>
+                                </li>
+                                <li class="burger-menu__item">
+                                    <a href="#">О компании</a>
+                                </li>
+                                    <li class="burger-menu__item">
+                                    <a href="#">Контакты и реквизиты</a>
+                                </li>
+                                <li class="burger-menu__item">
+                                    <a href="#">Новости и статьи</a>
+                                </li>
+                                <li class="burger-menu__item">
+                                    <a href="#">Гостиницы Харькова</a>
+                                </li>
+                                <li class="burger-menu__item">
+                                    <a href="#">План мероприятий 2020</a>
+                                </li>
+                                <li class="burger-menu__item">
+                                    <a href="#">Галерея</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="header__item">
+                            <a class="header__link" href="#">Семинары</a>
+                        </li>
+                        <li class="header__item">
+                            <a class="header__link" href="#">Корпоративные мероприятия</a>
+                        </li>
+                        <li class="header__item">
+                            <a class="header__link" href="#">Консалтинг</a>
+                        </li>
+                    </ul>
+                    <ul class="header__list callback">
+                        <li class="header__item">
+                            <a href="tel: +38 (057) 751-01-64"> +38 (057) 751-01-64</a>
+                        </li>
+                        <li class="header__item">
+                            <a href="mailto: info@ukrc.net">info@ukrc.net</a>
+                        </li>
+                    </ul>
+                    <!-- Когда авторизован  -->
+                    <div class="user-authorization-img" style="background-image: url(./img/reviews-img-1.png);"></div>
+                    <!-- Когда авторизован  -->
+                    <div class="burger-menu__wrapper">
+                        <button class="close-burger">
+                            <span class="icon-close"></span>
+                        </button>
+                        <div class="wrapper">
+                            <ul class="burger-menu__list main-list">
+                                <li class="burger-menu__item">
+                                    <a href="#">Мероприятия</a>
+                                </li>
+                                <li class="burger-menu__item">
+                                    <a href="#">Корпоративные мероприятия</a>
+                                </li>
+                                <li class="burger-menu__item">
+                                    <a href="#">Консалтинг</a>
+                                </li>
+                            </ul>
+                            <ul class="burger-menu__list">
+                                <li class="burger-menu__item">
+                                    <a href="#">Наши клиенты</a>
+                                </li>
+                                <li class="burger-menu__item">
+                                    <a href="#">Сотрудничество</a>
+                                </li>
+                                <li class="burger-menu__item">
+                                    <a href="#">О компании</a>
+                                </li>
+                                    <li class="burger-menu__item">
+                                    <a href="#">Контакты и реквизиты</a>
+                                </li>
+                                <li class="burger-menu__item">
+                                    <a href="#">Новости и статьи</a>
+                                </li>
+                                <li class="burger-menu__item">
+                                    <a href="#">Гостиницы Харькова</a>
+                                </li>
+                                <li class="burger-menu__item">
+                                    <a href="#">План мероприятий 2020</a>
+                                </li>
+                                <li class="burger-menu__item">
+                                    <a href="#">Галерея</a>
+                                </li>
+                            </ul>
+                            <ul class="burger-menu__list call-back">
+                                <li class="burger-menu__item">
+                                    <a href="tel: +38 (057) 751-01-64"> +38 (057) 751-01-64</a>
+                                </li>
+                                <li class="burger-menu__item">
+                                    <a href="mailto: info@ukrc.net">info@ukrc.net</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </header>
+        <main>
+            <section class="main-section">
+                <div class="main-section__wrapper container">
+                    <div class="main-section__info">
+                        <h1 class="main-caption-l">Консультационный центр «УкрКонсалтинг»</h1>
+                        <p class="main-section__text">25 лет УкрКонсалтинг работает в сфере консалтинга и обучения персонала. Среди наших клиентов большинство крупнейших компаний Украины</p>
+                        <button class="main_button-color js-button-decor js-button" data-target="popup-order">
+                            <span class="text">Записаться на семинар</span>
+                        </button>
+                    </div>
+                    <div class="main-section__decor" style="background-image:url(./img/main-img-1.png)"></div>
+                </div>
+            </section>
+            <section class="main-info">
+                <div class="main-info__wrapper container">
+                    <ul class="main-info__list">
+                        <li class="main-info__item">
+                            <div class="icon-img" style="background-image: url(./img/icon-img-1.svg);"></div>
+                            <h4>Повышение квалификации персонала</h4>
+                            <p>семинары, курсы, тренинги, мастер-классы – выдаем сертификаты</p>
+                        </li>
+                        <li class="main-info__item">
+                            <div class="icon-img" style="background-image: url(./img/icon-img-2.svg);"></div>
+                            <h4>Корпоративное обучение</h4>
+                            <p>по фиксированной стоимости с выездом на предприятие</p>
+                        </li>
+                        <li class="main-info__item">
+                            <div class="icon-img" style="background-image: url(./img/icon-img-3.svg);"></div>
+                            <h4>Консалтинговые услуги и аудит</h4>
+                            <p>экология, охрана труда,  управление персоналом,  экономика предприятия  и пр.</p>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <section class="announcements">
+                <div class="announcements__wrapper container">
+                    <h2 class="main-caption-m">Анонсы мероприятий</h2>
+                    <ul class="announcements__list">
+                        <li class="announcements__item" style="background-image:url(./img/announcements-img-1.png)">
+                            <h3 class="announcements__theme">Охрана труда</h3>
+                        </li>
+                        <li class="announcements__item" style="background-image:url(./img/announcements-img-2.png)">
+                            <h3 class="announcements__theme">Охрана окружающей среды</h3>
+                        </li>
+                        <li class="announcements__item" style="background-image:url(./img/announcements-img-3.png)">
+                            <h3 class="announcements__theme">Экономика предприятия</h3>
+                        </li>
+                        <li class="announcements__item" style="background-image:url(./img/announcements-img-4.png)">
+                            <h3 class="announcements__theme">Управление персоналом</h3>
+                        </li>
+                    </ul>
+                    <div class="position-wrapper">
+                        <ul class="workshops__list">
+                            <li class="workshops__item">
+                                <div class="workshops__item__wrapper js-drop-item">
+                                    <div class="workshops__date">
+                                        <h3>5.04 - 7.04</h3>
+                                    </div>
+                                    <p class="workshops-city">
+                                        <span>Харьков</span>
+                                        <span class="icon"></span>
+                                    </p>
+                                    <a href="#" class="workshops-content">
+                                        Функциональный менеджмент на предприятии
+                                    </a>
+                                    <p class="workshops-name">Функциональный менеджмент на предприятии</p>
+                                    <div class="price__wrapper">
+                                        <div class="wrapper">
+                                            <p class="price_old">3 850 <span>грн</span></p>
+                                            <p class="price">3 250 <span>грн</span></p>
+                                        </div>
+                                        <button class="info-button js-drop-button" type="button"></button>
+                                        <div class="info-drop">
+                                            <p>Скидка действует при участии более двух человек с одного предприятия</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="workshops__item">
+                                <div class="workshops__item__wrapper js-drop-item">
+                                    <div class="workshops__date">
+                                        <h3>5.04 - 7.04</h3>
+                                    </div>
+                                    <p class="workshops-city">
+                                        <span>Одесса</span>
+                                        <span class="icon"></span>
+                                    </p>
+                                    <a href="#" class="workshops-content">
+                                        Культура безопасности на производстве - фактор снижения рисков несчастных случаев и чрезвычайных ситуаций
+                                    </a>
+                                    <p class="workshops-name">Управление персоналом</p>
+                                    <div class="price__wrapper">
+                                        <div class="wrapper">
+                                            <p class="price_old">3 850 <span>грн</span></p>
+                                            <p class="price">3 250 <span>грн</span></p>
+                                        </div>
+                                        <button class="info-button js-drop-button" type="button"></button>
+                                        <div class="info-drop">
+                                            <p>Скидка действует при участии более двух человек с одного предприятия</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="workshops__item">
+                                <div class="workshops__item__wrapper">
+                                    <div class="workshops__date">
+                                        <h3>5.04 - 7.04</h3>
+                                    </div>
+                                    <p class="workshops-city">
+                                        <span>Харьков</span>
+                                        <span class="icon" style="background-image:url(./img/city-icon-1.svg)"></span>
+                                    </p>
+                                    <a href="#" class="workshops-content">
+                                        Культура безопасности на производстве - фактор снижения рисков несчастных случаев и чрезвычайных ситуаций
+                                    </a>
+                                    <p class="workshops-name">Охрана окружающей среды</p>
+                                    <div class="price__wrapper">
+                                        <div class="wrapper">
+                                            <p class="price_old">3 850 <span>грн</span></p>
+                                            <p class="price">3 250 <span>грн</span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="workshops__item">
+                                <div class="workshops__item__wrapper">
+                                    <div class="workshops__date">
+                                        <h3>5.04 - 7.04</h3>
+                                    </div>
+                                    <p class="workshops-city">
+                                        <span>Харьков</span>
+                                        <span class="icon"></span>
+                                    </p>
+                                    <a href="#" class="workshops-content">
+                                        Культура безопасности на производстве - фактор снижения рисков несчастных случаев и чрезвычайных ситуаций
+                                    </a>
+                                    <p class="workshops-name">Функциональный менеджмент на предприятии</p>
+                                    <div class="price__wrapper">
+                                        <div class="wrapper">
+                                            <p class="price">3 250 <span>грн</span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="workshops__item">
+                                <div class="workshops__item__wrapper">
+                                    <div class="workshops__date">
+                                        <h3>5.04 - 7.04</h3>
+                                    </div>
+                                    <p class="workshops-city">
+                                        <span>Харьков</span>
+                                        <span class="icon"></span>
+                                    </p>
+                                    <a href="#" class="workshops-content">
+                                        Культура безопасности на производстве - фактор снижения рисков несчастных случаев и чрезвычайных ситуаций
+                                    </a>
+                                    <p class="workshops-name">Управление персоналом</p>
+                                    <div class="price__wrapper">
+                                        <div class="wrapper">
+                                            <p class="price">3 250 <span>грн</span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="workshops__item">
+                                <div class="workshops__item__wrapper">
+                                    <div class="workshops__date">
+                                        <h3>5.04 - 7.04</h3>
+                                    </div>
+                                    <p class="workshops-city">
+                                        <span>Харьков</span>
+                                        <span class="icon"></span>
+                                    </p>
+                                    <div class="workshops-content">
+                                        <a href="#">Культура безопасности на производстве - фактор снижения рисков несчастных случаев и чрезвычайных ситуаций</a>
+                                    </div>
+                                    <p class="workshops-name">Охрана окружающей среды</p>
+                                    <div class="price__wrapper">
+                                        <div class="wrapper">
+                                            <p class="price_old">3 850 <span>грн</span></p>
+                                            <p class="price">3 250 <span>грн</span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <button class="main_button">
+                        <span class="text">СМОТРЕТЬ ВСЕ СЕМИНАРЫ</span>
+                    </button>
+                </div>
+            </section>
+            <section class="corporate-training">
+                <h2 class="main-caption-m">Корпоративное обучение</h2>
+                <div class="corporate-training__wrapper container">
+                    <div class="corporate-training__decor" style="background-image:url(./img/corporate-img-1.png)"></div>
+                    <div class="corporate-training__info">
+                        <div class="corporate-training__text">
+                            <p>КЦ «УкрКонсалтинг» проводит корпоративные семинары, тренинги <strong>с выездом на предприятие</strong> по предложенной заказчиком тематике с постановкой целей и задач</p>
+                            <p><strong>Базовая стоимость</strong> не зависит от колличества слушателей </p>
+                        </div>
+                        <ul class="corporate-training__list">
+                            <li class="corporate-training__item">
+                                <h5 class="corporate-training__item__caption">Экономичность</h5>
+                                <p>Корпоративное обучение наиболее выгодный способ обучить многих специалистов с одного предприятия</p>
+                            </li>
+                            <li class="corporate-training__item">
+                                <h5 class="corporate-training__item__caption">Эффективность</h5>
+                                <p>Во многих случаях корпоративы являются также и наиболее эфективным способом обучения.</p>
+                            </li>
+                            <li class="corporate-training__item">
+                                <h5 class="corporate-training__item__caption">Сертификат</h5>
+                                <p>Все слушатели получат именной сертефикат об участии после окончания занятий</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="corporate-calc__wrapper container">
+                    <div class="corporate-calc__container">
+                        <h2 class="main-caption-s">Расчитать стоимость корпоративного обучения</h2>
+                        <div class="wrapper">
+                            <div class="corporate-calc__body">
+                                <div class="corporate-calc__input">
+                                    <label class="input_wrapper">
+                                        <span class="input-caption">Где находится предприятие?</span>
+                                        <input type="text" class="main_input js-input" placeholder="Харьковская область">
+                                    </label>
+                                </div>
+                                <ul class="corporate-calc__list">
+                                    <li class="corporate-calc__item">
+                                        <h5 class="name">Раздаточных материалов</h5>
+                                        <div class="range-slider__wrapper">
+                                            <div class="range-slider">
+                                                <vue-slider v-model="calcPrice.material"></vue-slider>
+                                            </div>
+                                            <p class="range-slider__value">{{ calcPrice.material }}</p>
+                                        </div>
+                                    </li>
+                                    <li class="corporate-calc__item">
+                                        <h5 class="name">Количество сертифика</h5>
+                                        <div class="range-slider__wrapper">
+                                            <div class="range-slider">
+                                                <vue-slider v-model="calcPrice.certificate"></vue-slider>
+                                            </div>
+                                            <p class="range-slider__value">{{ calcPrice.certificate }}</p>
+                                        </div> 
+                                    </li>
+                                    <li class="corporate-calc__item">
+                                        <h5 class="name">Дней обучения</h5>
+                                        <div class="range-slider__wrapper">
+                                             <div class="range-slider">
+                                                <vue-slider v-model="calcPrice.day"></vue-slider>
+                                            </div>
+                                            <p class="range-slider__value">{{ calcPrice.day }}</p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="corporate-calc__footer">
+                                <p class="info">Расчитаная сумма является приблизительной. Конечная стоимость может отличаться от указанной как в большую так и в меньшую сторону</p>
+                                <div class="wrapper">
+                                    <div class="corporate-calc__final-price js-drop-item">
+                                        <p class="price">72 200 грн</p>
+                                        <button class="info-button js-drop-button" type="button"></button>
+                                        <button class="main_button-color js-button-decor">
+                                            <span class="text">ЗАКАЗАТЬ</span>
+                                        </button>
+                                        <div class="info-drop">
+                                            <p>Скидка действует при участии более двух человек с одного предприятия</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="corporate-topics__wrapper container">
+                    <h2 class="main-caption-s">Темы корпоративного обучения</h2>
+                    <p class="corporate-topics__sub">Темы могут быть <strong>скорректированы</strong> согласно Вашим требованиям</p>
+                    <div class="filter__wrapper js-drop-item">
+                        <button class="filter-mobile-button js-drop-button">
+                            <span class="icon-all filter-icon"></span>
+                            <span class="js-drop-info text">Все</span>
+                            <span class="icon-drop"></span>
+                        </button>
+                        <ul class="filter__list">
+                            <li class="filter__item js-drop-contains active">
+                                <span class="icon-all filter-icon"></span>
+                                <span class="text">Все</span>
+                            </li>
+                            <li class="filter__item js-drop-contains">
+                                <span class="icon-save-work filter-icon"></span>
+                                <span class="text">Охрана труда</span>
+                            </li>
+                            <li class="filter__item js-drop-contains">
+                                <span class="icon-save-world filter-icon"></span>
+                                <span class="text">Охрана окружающей среды</span>
+                            </li>
+                            <li class="filter__item js-drop-contains">
+                                <span class="icon-economy filter-icon"></span>
+                                <span class="text">Экономика предприятия</span>
+                            </li>
+                            <li class="filter__item js-drop-contains">
+                                <span class="icon-person filter-icon"></span>
+                                <span class="text">Управление персоналом</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <ul class="corporate-topics__list">
+                        <li class="corporate-topic__item">
+                            <a href="#">
+                                <div class="info">
+                                    <h5 class="topic-name">Охрана окружающей среды</h5>
+                                    <span class="topic-time">12 часов</span>
+                                </div>
+                                <h3 class="topic__main-info">Имплементация законодательных актов Европейского Союза в сфере охраны окружающей среды в правовую систему Украины</h3>
+                                <div class="topic-footer">
+                                    <span class="topic-time">12 часов</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="corporate-topic__item">
+                            <a href="#">
+                                <div class="info">
+                                    <h5 class="topic-name">Управление персоналом</h5>
+                                    <span class="topic-time">8 часов</span>
+                                </div>
+                                <h3 class="topic__main-info">Корпоративное мероприятие для экологов, актуальная информация 2020</h3>
+                                <div class="topic-footer">
+                                    <span class="topic-time">8 часов</span>
+                                </div> 
+                            </a>
+                        </li>
+                        <li class="corporate-topic__item">
+                            <a href="#">
+                                <div class="info">
+                                    <h5 class="topic-name">Экономика предприятия</h5>
+                                    <span class="topic-time">8 часов</span>
+                                </div>
+                                <h3 class="topic__main-info">Личная эффективность управленческого персонала</h3>
+                                <div class="topic-footer">
+                                    <span class="topic-time">8 часов</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="corporate-topic__item">
+                            <a href="#">
+                                <div class="info">
+                                    <h5 class="topic-name">Управление персоналом</h5>
+                                    <span class="topic-time">8 часов</span>
+                                </div>
+                                <h3 class="topic__main-info">Эффективная бизнесс-презентация</h3>
+                                <div class="topic-footer">
+                                    <span class="topic-time">8 часов</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="corporate-topic__item">
+                            <a href="#">
+                                <div class="info">
+                                    <h5 class="topic-name">Охрана окружающей среды</h5>
+                                    <span class="topic-time">16 часов</span>
+                                </div>
+                                <h3 class="topic__main-info">Практика организации нормирования труда на предприятии</h3>
+                                <div class="topic-footer">
+                                    <span class="topic-time">8 часов</span>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                    <a href="#" class="main_button">
+                        <span class="text">СМОТРЕТЬ ВСЕ СЕМИНАРЫ</span>
+                    </a>
+                </div>
+            </section>
+            <section class="about-company">
+                <div class="about-company__wrapper container">
+                    <h2 class="main-caption-m">О компании</h2>
+                    <div class="about-company__container">
+                        <div class="about-company__info">
+                            <div class="about-company__text">
+                                <p>Мы обучаем и консультируем сотрудников Украинских предприятий разного уровня, среднего и крупного бизнеса.</p>
+                                <p>Нашими основными направлениями работы были и остаются:</p>
+                                <ul>
+                                    <li>проведение семинаров, тренингов и мастер классов</li>
+                                    <li>организация обучающих корпоративных мероприятий консалтинговые услуги</li>
+                                    <li>информационно-технические разработки.</li>
+                                </ul>
+                            </div>
+                            <ul class="about-company__list">
+                                <li class="about-company__item">
+                                    <div class="about-company__item__img" style="background-image:url(./img/about-company-img-1.png)"></div>
+                                    <div class="about-company__item__text">
+                                        <p>22 года УкрКонсалтинг работает в сфере консалтинга и обучения </p>
+                                    </div>
+                                </li>
+                                <li class="about-company__item">
+                                    <div class="about-company__item__img" style="background-image:url(./img/about-company-img-2.png)"></div>
+                                    <div class="about-company__item__text">
+                                        <p>Мы провели около 1000 семинаров различной сложности</p>
+                                    </div>
+                                </li>
+                                <li class="about-company__item">
+                                    <div class="about-company__item__img" style="background-image:url(./img/about-company-img-3.png)"></div>
+                                    <div class="about-company__item__text">
+                                        <p>Среди наших клиенты практически все крупнейшие компании Украины</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="about-company-img" style="background-image: url(./img/about-company-main-img.png);"></div>
+                    </div>
+                </div>
+            </section>
+            <section class="trust-us">
+                <div class="trust-us__wrapper container">
+                    <h2 class="main-caption-m">Нам доверяют</h2>
+                    <p class="trust-us__sub-info">Нам доверяют обучение своих сотрудников большинство крупнейших компаний Украины</p>
+                    <ul class="trust-us__company__list">
+                        <li class="trust-us__company__item">
+                            <div class="img" style="background-image:url(./img/our-trust-img-1.png)"></div>
+                        </li>
+                        <li class="trust-us__company__item">
+                            <div class="img" style="background-image:url(./img/our-trust-img-2.png)"></div>
+                        </li>
+                        <li class="trust-us__company__item">
+                            <div class="img" style="background-image:url(./img/our-trust-img-3.png)"></div>
+                        </li>
+                        <li class="trust-us__company__item">
+                            <div class="img" style="background-image:url(./img/our-trust-img-4.png)"></div>
+                        </li>
+                        <li class="trust-us__company__item">
+                            <div class="img" style="background-image:url(./img/our-trust-img-5.png)"></div>
+                        </li>
+                        <li class="trust-us__company__item">
+                            <div class="img" style="background-image:url(./img/our-trust-img-6.png)"></div>
+                        </li>
+                    </ul>
+                    <ul class="trust-us__list">
+                        <li class="trust-us__item">
+                            <p class="number">22</p>
+                            <p class="type">Региона Украины</p>
+                        </li>
+                        <li class="trust-us__item">
+                            <p class="number">300+</p>
+                            <p class="type">Крупнейших компаний</p>
+                        </li>
+                        <li class="trust-us__item">
+                            <p class="number">22+</p>
+                            <p class="type">Производственных отраслей</p>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <section class="photo-gallery">
+                <div class="photo-gallery__wrapper container slider-infinity">
+                    <h3 class="main-caption-s">Как проходят наши мероприятия</h3>
+                    <p class="photo-gallery__sub-info">Фотогалерея</p>
+                    <ul class="photo-gallery__list js-slider-list">
+                        <li class="photo-gallery__item js-slider-item-infinity show">
+                            <div class="photo-gallery__item__img js-button" data-target="gallery" rel="button" style="background-image: url(./img/photo-gallery-img-1.png);"></div>
+                            <div class="photo-gallery__item__img js-button" data-target="gallery" rel="button" style="background-image: url(./img/photo-gallery-img-1.png);"></div>
+                            <div class="photo-gallery__item__img js-button" data-target="gallery" rel="button" style="background-image: url(./img/photo-gallery-img-1.png);"></div>
+                            <div class="photo-gallery__item__img js-button" data-target="gallery" rel="button" style="background-image: url(./img/photo-gallery-img-1.png);"></div>
+                            <div class="photo-gallery__item__img js-button" data-target="gallery" rel="button" style="background-image: url(./img/photo-gallery-img-1.png);"></div>
+                            <div class="photo-gallery__item__img js-button" data-target="gallery" rel="button" style="background-image: url(./img/photo-gallery-img-1.png);"></div>
+                        </li>
+                        <li class="photo-gallery__item js-slider-item-infinity">
+                            <div class="photo-gallery__item__img js-button" data-target="gallery" rel="button" style="background-image: url(./img/photo-gallery-img-2.png);"></div>
+                            <div class="photo-gallery__item__img js-button" data-target="gallery" rel="button" style="background-image: url(./img/photo-gallery-img-2.png);"></div>
+                            <div class="photo-gallery__item__img js-button" data-target="gallery" rel="button" style="background-image: url(./img/photo-gallery-img-2.png);"></div>
+                            <div class="photo-gallery__item__img js-button" data-target="gallery" rel="button" style="background-image: url(./img/photo-gallery-img-2.png);"></div>
+                            <div class="photo-gallery__item__img js-button" data-target="gallery" rel="button" style="background-image: url(./img/photo-gallery-img-2.png);"></div>
+                            <div class="photo-gallery__item__img js-button" data-target="gallery" rel="button" style="background-image: url(./img/photo-gallery-img-2.png);"></div>
+                        </li>
+                    </ul>
+                    <div class="buttons__wrapper js-arrow-infinity">
+                        <button class="slider-button prev"><span class="icon-slider-arrow-left"></span></button>
+                        <a href="#" class="main_button">
+                            <span class="text">перейти в галерею</span>
+                        </a>
+                        <button class="slider-button next"><span class="icon-slider-arrow-right"></span></button>
+                    </div>
+            </section>
+            <section class="reviews">
+                <div class="reviews__wrapper container slider-infinity">
+                    <div class="reviews__header">
+                        <h2 class="main-caption-m">Отзывы слушателей</h2>
+                        <a href="#" class="general-more">смотреть все отзывы</a>
+                    </div>
+                    <ul class="reviews__list js-slider-list">
+                        <li class="reviews__item show js-slider-item-infinity js-item">
+                            <div class="reviews__item__text">
+                                <div class="content">
+                                    <p>Семинар понравился, лекции ведут профессионалы. Спасибо УкрКонсалтингу за проведенное мероприятие.  Семинар понравился, лекции ведут профессионалы. Семинар понравился, лекции ведут профессионалы.</p>
+                                </div>
+                            </div>
+                            <div class="reviews__item-wrapper">
+                                <button class="js-more-info more_info js-button general-more" data-target="reviews">Читать весь отзыв</button>
+                                <div class="wrapper">
+                                    <h5 class="reviews__name">Иван Кротов</h5>
+                                    <p class="reviews__sub">эколог, Харьковский трубный завод имени Васильевича </p>
+                                </div>
+                                <div class="reviews__img" style="background-image:url(./img/reviews-img-1.png)"></div>
+                            </div>
+                        </li>
+                        <li class="reviews__item js-slider-item-infinity js-item">
+                            <div class="reviews__item__text">
+                                <div class="content">
+                                    <p>Семинар понравился, лекции ведут профессионалы. Спасибо УкрКонсалтингу за проведенное мероприятие.  Семинар понравился, лекции ведут профессионалы. Семинар понравился, лекции ведут профессионалы.</p>
+                                </div>
+                            </div>
+                            <div class="reviews__item-wrapper">
+                                <button class="js-more-info more_info js-button general-more" data-target="reviews">Читать весь отзыв</button>
+                                <div class="wrapper">
+                                    <h5 class="reviews__name">Марина Кружевная</h5>
+                                    <p class="reviews__sub">эколог, Харьковский трубный завод имени Васильевича </p>
+                                </div>
+                                <div class="reviews__img" style="background-image:url(./img/reviews-img-2.png)"></div>
+                            </div>
+                        </li>
+                        <li class="reviews__item js-slider-item-infinity js-item">
+                            <div class="reviews__item__text">
+                                <div class="content">
+                                    <p>Семинар понравился.</p>
+                                </div>
+                            </div>
+                            <div class="reviews__item-wrapper">
+                                <button class="js-more-info more_info js-button general-more" data-target="reviews">Читать весь отзыв</button>
+                                <div class="wrapper">
+                                    <h5 class="reviews__name">Марина Кружевная</h5>
+                                    <p class="reviews__sub">эколог, Харьковский трубный завод имени Васильевича </p>
+                                </div>
+                                <div class="reviews__img" style="background-image:url(./img/reviews-img-2.png)"></div>
+                            </div>
+                        </li>
+                        <li class="reviews__item js-slider-item-infinity js-item">
+                            <div class="reviews__item__text">
+                                <div class="content">
+                                    <p>Сегодня был супер день. Особенно подравилась экскурсия на Phillip Morris</p>
+                                </div>
+                            </div>
+                            <div class="reviews__item-wrapper">
+                                <button class="js-more-info more_info js-button general-more" data-target="reviews">Читать весь отзыв</button>
+                                <div class="wrapper">
+                                    <h5 class="reviews__name">Марина Кружевная</h5>
+                                    <p class="reviews__sub">эколог, Харьковский трубный завод имени Васильевича </p>
+                                </div>
+                                <div class="reviews__img" style="background-image:url(./img/reviews-img-2.png)"></div>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="buttons__wrapper js-arrow-infinity">
+                        <button class="slider-button prev"><span class="icon-slider-arrow-left"></span></button>
+                        <button class="main-button-shadow js-button" data-target="add-reviews">
+                            <span class="text">оставить отзыв</span>
+                        </button>
+                        <button class="slider-button next"><span class="icon-slider-arrow-right"></span></button>
+                    </div>
+                </div>
+            </section>
+            <section class="notyfication">
+                <div class="notyfication__wrapper container">
+                    <h2 class="main-caption-m">Уведомления</h2>
+                    <p class="notyfication-sub">Как Вы хотели бы получать информацию о свежих мероприятиях?</p>
+                    <form action="#" class="notyfication__form">
+                        <div class="notyfication__list">
+                            <label class="notyfication__item">
+                                <input class="noty-radio" type="radio" name="noty" value="noty-sms">
+                                <span class="custome-radio"></span>
+                                <div class="notyfication__img" style="background:url(./img/noty-img-1.png)"></div>
+                                <div class="notyfication__info">
+                                    <h5>SMS рассылка</h5>
+                                    <p>Анонсы мероприятий в sms-сообщениях</p>
+                                </div>
+                            </label>
+                            <label class="notyfication__item">
+                                <input class="noty-radio" type="radio" name="noty" value="noty-E-mail">
+                                <span class="custome-radio"></span>
+                                <div class="notyfication__img" style="background:url(./img/noty-img-2.png)"></div>
+                                <div class="notyfication__info">
+                                    <h5>E-mail рассылка</h5>
+                                    <p>Программы семинаров по электронной почте</p>
+                                </div>
+                            </label>
+                            <label class="notyfication__item">
+                                <input class="noty-radio" type="radio" name="noty" value="noty-push">
+                                <span class="custome-radio"></span>
+                                <div class="notyfication__img" style="background:url(./img/noty-img-3.png)"></div>
+                                <div class="notyfication__info">
+                                    <h5>Push-&nbsp;уведомления</h5>
+                                    <p>Анонсы семинаров в web-браузере</p>
+                                </div>
+                            </label>
+                        </div>
+                        <div class="notyfication-subscription">
+                            <h5 class="notyfication-subscription__caption">Выберите интересующие Вас темы:</h5>
+                            <div class="notyfication-subscription__list">
+                                <label class="notyfication-subscription__item checkbox__wrapper">
+                                    <input type="checkbox" value="Охрана окружающей среды" class="input-checkbox">
+                                    <span class="custome-check">
+                                        <span class="icon-active"></span>
+                                    </span>
+                                    <span class="text">Охрана окружающей среды</span>
+                                </label>
+                                <label class="notyfication-subscription__item checkbox__wrapper">
+                                    <input type="checkbox" value="Охрана труда" class="input-checkbox">
+                                    <span class="custome-check">
+                                        <span class="icon-active"></span>
+                                    </span>
+                                    <span class="text">Охрана труда</span>
+                                </label>
+                                <label class="notyfication-subscription__item checkbox__wrapper">
+                                    <input type="checkbox" value="Управление персоналом" class="input-checkbox">
+                                    <span class="custome-check">
+                                        <span class="icon-active"></span>
+                                    </span>
+                                    <span class="text">Управление персоналом</span>
+                                </label>
+                                <label class="notyfication-subscription__item checkbox__wrapper">
+                                    <input type="checkbox" value="Экономика предприятия" class="input-checkbox">
+                                    <span class="custome-check">
+                                        <span class="icon-active"></span>
+                                    </span>
+                                    <span class="text">Экономика предприятия</span>
+                                </label>
+                            </div>
+                            <div class="notyfication-subscription__footer">
+                                <label class="input_wrapper error">
+                                    <span class="input-caption">Введите ваш E-mail</span>
+                                    <input type="email" class="main_input" placeholder="ivanov@gmail.com">
+                                    <span class="input-text-error">Пожалуйста, введите ваш e-mail в формате: ivanov@gmail.com</span>
+                                </label>
+                                <button class="main_button-color js-button-decor" type="submit">
+                                    <span class="text">Подписаться</span>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </section>
+            <section class="important-to-us">
+                <div class="important-to-us__wrapper container">
+                    <h2 class="main-caption-m">Нам это важно</h2>
+                    <ul class="important-to-us__list">
+                        <li class="important-to-us__item">
+                            <h4 class="type">Были на семинаре?</h4 >
+                            <p class="content">Оцените организационную работу и работу преподавателей. Опишите что Вам понравилось и что необходимо улучшить</p>
+                            <button class="main-button-shadow js-button" data-target="add-reviews">
+                                <span class="text">ОСТАВИТЬ ОТЗЫВ</span>
+                            </button> 
+                        </li>
+                        <li class="important-to-us__item">
+                            <h4 class="type">Хотите предложить тему?</h4>
+                            <p class="content">Опишите темы или программы семинаров которые Вы хотели бы посетить.</p>
+                            <button class="main-button-shadow js-button" data-target="popup-theme">
+                                <span class="text">ПРЕДЛОЖИТЬ ТЕМУ</span>
+                            </button> 
+                        </li>
+                        <li class="important-to-us__item">
+                            <h4 class="type">Ответьте на несколько вопросов</h4>
+                            <p class="content">Ответьте на несколько вопросов в опроснике – это позволит нам повысить качество предоставляемых услуг.</p>
+                            <button class="main-button-shadow js-button" data-target="popup-questions">
+                                <span class="text">ЗАПОЛНИТЬ АНКЕТУ</span>
+                            </button> 
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <section class="helpful-info">
+                <div class="helpful-info__wrapper container">
+                    <h2 class="main-caption-m">Полезная информация</h2>
+                    <ul class="helpful-info__list">
+                        <li class="helpful-info__item">
+                            <div class="helpful-info__item__img" style="background-image: url(./img/helpful-img-1.png)"></div>
+                            <div class="helpful-info__content">
+                                <h5 class="helpful-info__caption">Календарь мероприятий 2019</h5>
+                                <a href="#" class="general-more">подробнее</a>
+                            </div>
+                        </li>
+                        <li class="helpful-info__item">
+                            <div class="helpful-info__item__img" style="background-image: url(./img/helpful-img-2.png)"></div>
+                            <div class="helpful-info__content">
+                                <h5 class="helpful-info__caption">Хотите преподавать у нас?</h5>
+                                <a href="#" class="general-more">подробнее</a>
+                            </div>
+                        </li>
+                        <li class="helpful-info__item">
+                            <div class="helpful-info__item__img" style="background-image: url(./img/helpful-img-3.png)"></div>
+                            <div class="helpful-info__content">
+                                <h5 class="helpful-info__caption">Гостиницы Харькова</h5>
+                                <a href="#" class="general-more">подробнее</a>
+                            </div>
+                        </li>
+                        <li class="helpful-info__item">
+                            <div class="helpful-info__item__img" style="background-image: url(./img/helpful-img-4.png)"></div>
+                            <div class="helpful-info__content">
+                                <h5 class="helpful-info__caption">Новая услуга. Экологическая к</h5>
+                                <a href="#" class="general-more">подробнее</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <section class="seo-block">
+                <h2 class="main-caption-m">SEO - текст</h2>
+                <div class="seo-block__wrapper container">
+                    <h4 class="seo-caption-m">Подзаголовок</h4>
+                    <p>Ви́кинги (дат. vikinger, швед. vikingar, норв. vikingene) — раннесредневековые скандинавские[1] мореходы в VIII—XI веках, совершавшие морские походы от Винланда до Биармии и Северной Африки. В основной массе это были племена в стадии разложения родоплеменного строя, жившие на территории современных Швеции, Дании и Норвегии, которых толкало за пределы родных стран перенаселение и голод[1]. По религиозной принадлежности викинги в подавляющем большинстве были язычниками[1</p>
+                    <h5 class="seo-caption-s">Подзаголовок</h5>
+                    <p>Шведские, норвежские и датские викинги, которые двигались на запад, известны по латинским источникам под именем норманнов (лат. Normanni). Точный этнический состав викингов в Восточной Европе (в балтийских землях и на Руси) неизвестен, но европейские историки предполагают, что это могли быть шведы[1]. В летописях Киевской Руси они были известны как варяги. Однако по Лаврентьевской летописи: «Те варяги назывались русью, как другие называются свеи, а иные норманны и англы, а ещё иные готландцы, — вот так и эти».</p>
+                </div>
+            </section>
+        </main>
+        <footer class="footer">
+            <div class="footer__wrapper container">
+                <div class="footer-contact">
+                    <h4 class="footer-caption">Контакты</h4>
+                    <ul class="footer-contact__list">
+                        <li class="footer-contact__item">
+                            <a href="tel:+38 (097) 214 42 05">+38 (097) 214 42 05</a>
+                        </li>
+                        <li class="footer-contact__item">
+                            <a href="mailto:info@ukrc.net">info@ukrc.net</a>
+                        </li>
+                        <li class="footer-contact__item">
+                            <a href="tel: +38 (057) 751 01 64">+38 (057) 751 01 64</a>
+                        </li>
+                        <li class="footer-contact__item">
+                            <a href="#">Украина, г.Харьков, пр.Тракторостроителей 83-е, 24</a>
+                        </li>
+                    </ul>
+                    <p class="footer-id-company">р/с: № 26008052213769  в ПАТ КБ «Приватбанк», МФО 351533 ЗКПО 41519420</p>
+                </div>
+                <div class="footer-social">
+                    <div class="footer-social__wrapper">
+                        <h4 class="footer-caption">УкрКонсалтинг в мессенджерах</h4>
+                        <ul class="footer-social__list">
+                            <li class="footer-social__item">
+                                <a href="#">
+                                    <span class="icon-telegram"></span>
+                                </a>
+                            </li>
+                            <li class="footer-social__item">
+                                <a href="#">
+                                    <span class="icon-skype"></span>
+                                </a>
+                            </li>
+                            <li class="footer-social__item">
+                                <a href="#">
+                                    <span class="icon-messenger"></span>
+                                </a>
+                            </li>
+                            <li class="footer-social__item">
+                                <a href="#">
+                                    <span class="icon-vider"></span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer-social__wrapper">
+                        <h4 class="footer-caption">Мы в соц. сетях</h4>
+                        <ul class="footer-social__list">
+                            <li class="footer-social__item">
+                                <a href="#">
+                                    <span class="icon-fb"></span>
+                                </a>
+                            </li>
+                            <li class="footer-social__item">
+                                <a href="#">
+                                    <span class="icon-ins"></span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                <div class="footer-copyright__wrapper container">
+                    <p>&#169; УКЦ “УкрКонсалтинг” 1995-2020</p>
+                    <a href="#">Политика конфиденциальности</a>
+                    <p>Разработка сайта <strong>AIMIX.SPACE</strong></p>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- Показ отзыва  -->
+    
+    <section class="popup popup-reviews" data-target="reviews">
+        <button class="js-close close-popup">Закрыть</button>
+        <div class="popup__wrapper">
+            <div class="popup-reviews__header">
+                <div class="reviews__img"></div>
+                <div class="wrapper">
+                    <h5 class="reviews__name"></h5>
+                    <p class="reviews__sub"></p>
+                </div>
+            </div>
+            <div class="popup-reviews__content">
+                <p></p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- //Показ отзыва  -->
+    
+    <!-- Оставить отзы  -->
+    
+     <section class="popup add-reviews" data-target="add-reviews">
+        <button class="js-close close__popup">
+            <span class="icon-close"></span>
+        </button>
+        <div class="popup__wrapper">
+            <h4 class="popup-caption">Добавление отзыва</h4>
+            <form action="#" class="add-reviews__form">
+                <div class="add-reviews__photo" style="background-image: url(./img/add-photo.png);">
+                    <label class="add-photo-input">
+                        <input type="file" class="js-input-file">
+                        <span class="add-photo-input__decor">
+                            <span class="icon-add-photo"></span>
+                        </span>
+                    </label>
+                </div>
+                <button type="button" class="clear-file-input">отмена</button>
+                <div class="popup-inputs">
+                    <label class="input_wrapper">
+                        <span class="input-caption">Ваше имя*</span>
+                        <input type="text" class="main_input" placeholder="Имя" required>
+                    </label>
+                    <label class="input_wrapper">
+                        <span class="input-caption">E-mail*</span>
+                        <input type="email" class="main_input" placeholder="ivanov@gmail.com" required>
+                    </label>
+                    <label class="input_wrapper">
+                        <span class="input-caption">Номер телефона*</span>
+                        <input type="tel" class="main_input" placeholder="+380934882556" required>
+                    </label>
+                    <label class="input_wrapper">
+                        <span class="input-caption">Ваша должность</span>
+                        <input type="text" class="main_input" placeholder="Эколог">
+                    </label>
+                    <label class="input_wrapper">
+                        <span class="input-caption">Полное название предприятия</span>
+                        <input type="text" class="main_input" placeholder="Завод имени Малышева">
+                    </label>
+                    <label class="input_wrapper">
+                        <span class="input-caption">Ваш отзыв</span>
+                        <textarea class="main_input main_input-textarea" placeholder="Напишите отзыв"></textarea>
+                    </label>
+                </div>
+                <div class="stars__wrapper">
+                    <h5>Оцените нашу работу</h5>
+                    <input type="hidden" name="stars" class="js-stars-input">
+                    <ul class="stars__list js-star-list">
+                        <li class="stars__item js-star-item" data-target="1">
+                            <span class="icon-star"></span>
+                        </li>
+                        <li class="stars__item js-star-item" data-target="2">
+                            <span class="icon-star"></span>
+                        </li>
+                        <li class="stars__item js-star-item" data-target="3">
+                            <span class="icon-star"></span>
+                        </li>
+                        <li class="stars__item js-star-item" data-target="4">
+                            <span class="icon-star"></span>
+                        </li>
+                        <li class="stars__item js-star-item" data-target="5">
+                            <span class="icon-star"></span>
+                        </li>
+                    </ul>
+                </div>
+                <button class="main_button-color js-button-decor">
+                    <span class="text">Отправить</span>
+                </button> 
+            </form>
+        </div>
+    </section>
+    
+     <!-- //Оставить отзы  -->
+     <!-- Тема семинара  -->
+     
+    <section class="popup popup-theme" data-target="popup-theme">
+        <button class="js-close close__popup">
+            <span class="icon-close"></span>
+        </button>
+        <div class="popup__wrapper">
+            <h4 class="popup-caption">Хотите предложить тему семинара?</h4>
+            <form action="#" class="popup__form">
+                <div class="popup-inputs">
+                    <label class="input_wrapper">
+                        <span class="input-caption">Ваше имя*</p>
+                        <input type="text" class="main_input" placeholder="Имя" required>
+                    </label>
+                    <label class="input_wrapper">
+                        <span class="input-caption">E-mail*</p>
+                        <input type="email" class="main_input" placeholder="ivanov@gmail.com" required>
+                    </label>
+                    <label class="input_wrapper">
+                        <span class="input-caption">Номер телефона*</p>
+                        <input type="tel" class="main_input" placeholder="+380934882556" required>
+                    </label>
+                    <label class="input_wrapper">
+                        <span class="input-caption">Ваше предложение</p>
+                        <textarea class="main_input main_input-textarea" placeholder="Опишите тему или программу мероприятия которое Вы хотели бы посетить. Опишите подробности, вопросы которые Вас интересуют"></textarea>
+                    </label>
+                </div>
+                <button class="main_button-color js-button-decor">
+                    <span class="text">Отправить</span>
+                </button> 
+            </form>
+        </div>
+    </section>
+    
+    <!-- //Тема семинара  -->
+    
+    <!-- Программа семинара  -->
+    
+    <section class="popup popup-program" data-target="popup-program">
+        <button class="js-close close__popup">
+            <span class="icon-close"></span>
+        </button>
+        <div class="popup__wrapper">
+            <h4 class="popup-caption">Скачать программу семинара</h4>
+            <p class="popup__info-text">«Современные стандарты природоохранной работы. Обеспечение экологической безопасности в области обращения с отходами.»</p>
+            <h5 class="popup-programm__caption">Вы можете исключить некоторую информацию</h5>
+            <form action="#" class="popup__form">
+                <div class="popup-checkbox">
+                    <label class="checkbox__wrapper">
+                        <input type="checkbox" class="input-checkbox" value='Экскурсия'>
+                        <span class="custome-check">
+                            <span class="icon-active"></span>
+                        </span>
+                        <span class="text">Экскурсия</span>
+                    </label>
+                    <label class="checkbox__wrapper">
+                        <input type="checkbox" class="input-checkbox" value='Дата проведения'>
+                        <span class="custome-check">
+                            <span class="icon-active"></span>
+                        </span>
+                        <span class="text">Дата проведения</span>
+                    </label>
+                    <label class="checkbox__wrapper">
+                        <input type="checkbox" class="input-checkbox" value='Предисловие'>
+                        <span class="custome-check">
+                            <span class="icon-active"></span>
+                        </span>
+                        <span class="text">Предисловие</span>
+                    </label>
+                    <label class="checkbox__wrapper">
+                        <input type="checkbox" class="input-checkbox" value='Дополнительная информация'>
+                        <span class="custome-check">
+                            <span class="icon-active"></span>
+                        </span>
+                        <span class="text">Дополнительная информация</span>
+                    </label>
+                    <label class="checkbox__wrapper">
+                        <input type="checkbox" class="input-checkbox" value='Обед'>
+                        <span class="custome-check">
+                            <span class="icon-active"></span>
+                        </span>
+                        <span class="text">Обед</span>
+                    </label>
+                    <label class="checkbox__wrapper">
+                        <input type="checkbox" class="input-checkbox" value='Реквизиты'>
+                        <span class="custome-check">
+                            <span class="icon-active"></span>
+                        </span>
+                        <span class="text">Реквизиты</span>
+                    </label>
+                    <label class="checkbox__wrapper">
+                        <input type="checkbox" class="input-checkbox" value='Преподаватели'>
+                        <span class="custome-check">
+                            <span class="icon-active"></span>
+                        </span>
+                        <span class="text">Преподаватели</span>
+                    </label>
+                    <label class="checkbox__wrapper">
+                        <input type="checkbox" class="input-checkbox" value='Цена'>
+                        <span class="custome-check">
+                            <span class="icon-active"></span>
+                        </span>
+                        <span class="text">Цена</span>
+                    </label>
+                </div>
+                <a href="#" download class="main_button-color js-button-decor">
+                    <span class="text">СКАЧАТЬ DOC</span>
+                </a>
+                <a href="#" download class="main_button-color js-button-decor">
+                    <span class="text">СКАЧАТЬ PDF</span>
+                </a>
+                <a href="#" download class="main_button-color js-button-decor">
+                    <span class="text">РАСПЕЧАТАТЬ</span>
+                </a>
+            </form>
+        </div>
+    </section>
+    
+    <!-- //Программа семинара  -->
+    
+     <!-- Заказать корпоративное мероприятие  -->
+     
+    <section class="popup popup-corporative" data-target="popup-сorporative">
+        <button class="js-close close__popup">
+            <span class="icon-close"></span>
+        </button>
+        <div class="popup__wrapper">
+            <h4 class="popup-caption">Заказать корпоративное мероприятие</h4>
+            <form action="#" class="popup__form">
+                <div class="popup-inputs">
+                    <label class="input_wrapper">
+                        <span class="input-caption">Контактное лицо</span>
+                        <input type="text" class="main_input" placeholder="Имя">
+                    </label>
+                    <label class="input_wrapper">
+                        <span class="input-caption">E-mail*</span>
+                        <input type="email" class="main_input" placeholder="ivanov@gmail.com" required>
+                    </label>
+                    <label class="input_wrapper">
+                        <span class="input-caption">Номер телефона*</span>
+                        <input type="tel" class="main_input" placeholder="+380934882556" required>
+                    </label>
+                    <div class="input_wrapper js-drop-item general-drop">
+                        <span class="input-caption">Выберите программу обучения</span>
+                        <div class="wrapper js-drop-button" rel="button">
+                            <input type="text" class="main_input main_input-drop js-drop-input" readonly placeholder="Эколог"> 
+                            <span class="icon-drop"></span>
+                        </div>
+                        <div class="general-drop__list">
+                            <div class="general-drop__item js-drop-contains">
+                                <div class="text">Еще одна программа</div>
+                            </div>
+                            <div class="general-drop__item js-drop-contains">
+                                <div class="text">Еще одна программа</div>
+                            </div>
+                            <div class="general-drop__item js-drop-contains">
+                                <div class="text">Еще одна программа</div>
+                            </div>
+                        </div>
+                    </div>
+                    <label class="input_wrapper">
+                        <span class="input-caption">Примечание</p>
+                        <textarea class="main_input main_input-textarea" placeholder="Добавить комментарий"></textarea>
+                    </label>
+                </div>
+                <button class="main_button-color js-button-decor">
+                    <span class="text">ЗАКАЗАТЬ</span>
+                </button> 
+            </form>
+        </div>
+    </section>
+    
+    <!-- //Заказать корпоративное мероприятие  -->
+    
+    <!-- Заказ семинар -->
+    
+    <section class="popup popup-order" data-target="popup-order">
+        <button class="js-close close__popup">
+            <span class="icon-close"></span>
+        </button>
+        <div class="popup__wrapper">
+            <h4 class="popup-caption">Записаться на семинар</h4>
+            <p class="popup__info-text">«Современные стандарты природоохранной работы. Обеспечение экологической безопасности в области обращения с отходами.»</p>
+            <form action="#" class="popup__form">
+                <div class="popup-inputs">
+                    <label class="input_wrapper">
+                        <span class="input-caption">Контактное лицо</span>
+                        <input type="text" class="main_input" placeholder="Имя">
+                    </label>
+                    <label class="input_wrapper">
+                        <span class="input-caption">E-mail*</span>
+                        <input type="email" class="main_input" placeholder="ivanov@gmail.com" required>
+                    </label>
+                    <label class="input_wrapper">
+                        <span class="input-caption">Номер телефона*</span>
+                        <input type="tel" class="main_input" placeholder="+380934882556" required>
+                    </label>
+                    <label class="input_wrapper">
+                        <span class="input-caption">Полное название предприятия*</span>
+                        <input type="text" class="main_input" placeholder="Завод имени Малышева" required>
+                    </label>
+                    <label class="input_wrapper">
+                        <span class="input-caption">Полное ФИО участников*</span>
+                        <input type="text" class="main_input" placeholder="Фамилия Имя Отчество" required>
+                    </label>
+                    <label class="input_wrapper">
+                        <span class="input-caption">Примечание</span>
+                        <textarea class="main_input main_input-textarea" placeholder="Добавить комментарий"></textarea>
+                    </label>
+                </div>
+                <button class="main_button-color js-button-decor">
+                    <span class="text">ЗАПИСАТЬСЯ</span>
+                </button> 
+            </form>
+        </div>
+    </section>
+    
+    <!-- //Заказ семинар -->
+    
+    <!-- Подать заявку -->
+    
+    <section class="popup popup-request" data-target="popup-request">
+        <button class="js-close close__popup">
+            <span class="icon-close"></span>
+        </button>
+        <div class="popup__wrapper">
+            <h4 class="popup-caption">Подать заявку</h4>
+            <form action="#" class="popup__form">
+                <div class="popup-inputs">
+                    <label class="input_wrapper">
+                        <span class="input-caption">Полное название предприятия</span>
+                        <input type="text" class="main_input" placeholder="Завод имени Малышева">
+                    </label>
+                    <div class="person__wrapper">
+                        <label class="input_wrapper">
+                            <span class="input-caption">Полное ФИО участника</span>
+                            <input type="text" class="main_input" placeholder="Фамилия Имя Отчество">
+                        </label>
+                        <button type="button" class="add-person">
+                            <span class="decor"></span>
+                            <span>Добавить участника</span>
+                        </button>
+                    </div>
+                    <label class="input_wrapper">
+                        <span class="input-caption">E-mail*</span>
+                        <input type="email" class="main_input" placeholder="ivanov@gmail.com" required>
+                    </label>
+                    <label class="input_wrapper">
+                        <span class="input-caption">Номер телефона*</span>
+                        <input type="tel" class="main_input" placeholder="+380934882556" required>
+                    </label>
+                    <label class="input_wrapper">
+                        <span class="input-caption">Примечание</span>
+                        <textarea class="main_input main_input-textarea" placeholder="Добавить комментарий"></textarea>
+                    </label>
+                    <label class="checkbox__wrapper checkbox__wrapper-policy">
+                        <input type="checkbox" class="input-checkbox" value='Дата проведения'>
+                        <span class="custome-check">
+                            <span class="icon-active"></span>
+                        </span>
+                        <span class="text">Я принимаю условия <a href="#" class="policy-link">Пользовательского соглашения</a></span>
+                    </label>
+                </div>
+                <button class="main_button-color js-button-decor">
+                    <span class="text">ОТПРАВИТЬ ЗАЯВКУ</span>
+                </button> 
+            </form>
+        </div>
+    </section>
+    
+    <!-- //Подать заявку -->
+    
+    <!-- Заказать консалтинг  -->
+     
+    <section class="popup popup-event" data-target="popup-event">
+        <button class="js-close close__popup">
+            <span class="icon-close"></span>
+        </button>
+        <div class="popup__wrapper">
+            <h4 class="popup-caption">Заказать консалтинг</h4>
+            <p class="popup__info-text">“Экологический консалтинг”</p>
+            <form action="#" class="popup__form">
+                <div class="popup-inputs">
+                    <label class="input_wrapper">
+                        <span class="input-caption">Контактное лицо</span>
+                        <input type="text" class="main_input" placeholder="Имя">
+                    </label>
+                    <label class="input_wrapper">
+                        <span class="input-caption">E-mail*</span>
+                        <input type="email" class="main_input" placeholder="ivanov@gmail.com" required>
+                    </label>
+                    <label class="input_wrapper">
+                        <span class="input-caption">Номер телефона*</span>
+                        <input type="tel" class="main_input" placeholder="+380934882556" required>
+                    </label>
+                    <label class="input_wrapper">
+                        <span class="input-caption">Полное название предприятия*</span>
+                        <input type="text" class="main_input" placeholder="Завод имени Малышева" required>
+                    </label>
+                    <label class="input_wrapper">
+                        <span class="input-caption">Примечание</span>
+                        <textarea class="main_input main_input-textarea" placeholder="Добавить комментарий"></textarea>
+                    </label>
+                </div>
+                <button class="main_button-color js-button-decor">
+                    <span class="text">ЗАКАЗАТЬ</span>
+                </button> 
+            </form>
+        </div>
+    </section>
+    
+    <!-- //Заказать консалтинг  -->
+    
+    
+    <!-- Преподаватель курстов  -->
+    <section class="popup popup-teacher" data-target="popup-teacher">
+        <button class="js-close close__popup">
+            <span class="icon-close"></span>
+        </button>
+        <div class="popup__wrapper">
+            <div class="popup-teacher__header">
+                <h4 class="popup-caption">Кобиковская Юлия Валентиновна</h4>
+                <div class="teacher__photo" style="background-image: url(./img/reviews-img-2.png)"></div>
+            </div>
+            <div class="popup-teacher__body">
+                <ul class="popup-teacher__list">
+                    <li class="popup-teacher__item">
+                        <p>Практический психолог</p>
+                    </li>
+                    <li class="popup-teacher__item">
+                        <p>Преподаватель психологии</p>
+                    </li>
+                    <li class="popup-teacher__item">
+                        <p>Тренер</p>
+                    </li>
+                    <li class="popup-teacher__item">
+                        <p>Тренер-фасилитатор ОО “Возраст возможностей”</p>
+                    </li>
+                    <li class="popup-teacher__item">
+                        <p>Член союза журналистов Украины</p>
+                    </li>
+                </ul>
+                <h5 class="popup-teacher__caption">Преподаватель курсов</h5>
+                <ul class="popup-teacher__course-list">
+                    <li class="popup-teacher__course-item">
+                        <p>Современные стандарты коммуникационной компетенции. Развитие ораторских навыков</p>
+                        <a href="#">Подробнее</a>
+                    </li>
+                    <li class="popup-teacher__course-item">
+                        <p>Система мотивации безопасного поведения на предприятии. Психологическое обеспечение безопасного поведения</p>
+                        <a href="#">Подробнее</a>
+                    </li>
+                    <li class="popup-teacher__course-item">
+                        <p>Лидерство и руководство в менеджменте. Овладение навыков психической саморегуляции</p>
+                        <a href="#">Подробнее</a>
+                    </li>
+                    <li class="popup-teacher__course-item">
+                        <p>Личная эффективность управленческого персонала</p>
+                        <a href="#">Подробнее</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="popup-teacher__reviews slider-infinity">
+                <h5 class="popup-teacher__caption">Отзывы о преподавателе</h5>
+                <ul class="popup-teacher__reviews__list js-slider-list">
+                    <li class="popup-teacher__reviews__item js-item js-slider-item-infinity show">
+                        <div class="content">
+                            <p>Семинар понравился, лекции ведут профессионалы. Спасибо УкрКонсалтингу за проведенное мероприятие.  Семинар понравился, лекции ведут профессионалы. Семинар понравился, лекции ведут профессионалы.</p>
+                        </div>
+                        <div class="reviews__item-wrapper">
+                            <button class="js-more-info more_info js-button" data-target="reviews">Читать весь отзыв</button>
+                            <div class="wrapper">
+                                <h5 class="reviews__name">Иван Кротов</h5>
+                                <p class="reviews__sub">эколог, Харьковский трубный завод имени Васильевича </p>
+                                <button class="add-reviews-button js-button" data-target="add-reviews">Оставить свой отзыв</button>
+                            </div>
+                            <div class="reviews__img" style="background-image:url(./img/reviews-img-1.png)"></div>
+                        </div>
+                    </li>
+                    <li class="popup-teacher__reviews__item js-item js-slider-item-infinity">
+                        <div class="content">
+                            <p>Семинар понравился, лекции ведут профессионалы. Спасибо УкрКонсалтингу за проведенное мероприятие.  Семинар понравился, лекции ведут профессионалы. Семинар понравился, лекции ведут профессионалы.</p>
+                        </div>
+                        <div class="reviews__item-wrapper">
+                            <button class="js-more-info more_info js-button" data-target="reviews">Читать весь отзыв</button>
+                            <div class="wrapper">
+                                <h5 class="reviews__name">Иван Кротов</h5>
+                                <p class="reviews__sub">эколог, Харьковский трубный завод имени Васильевича </p>
+                                <button class="add-reviews-button js-button" data-target="add-reviews">Оставить свой отзыв</button>
+                            </div>
+                            <div class="reviews__img" style="background-image:url(./img/reviews-img-1.png)"></div>
+                        </div>
+                    </li>
+                </ul>
+                <div class="buttons__wrapper js-arrow-infinity js-item">
+                    <button class="slider-button prev"><span class="icon-slider-arrow-left"></span></button>
+                    <button class="slider-button next"><span class="icon-slider-arrow-right"></span></button>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- //Преподаватель курстов  -->
+    
+    <!-- Вопросы  -->
+     
+    <section class="popup popup-questions" data-target="popup-questions">
+        <button class="js-close close__popup">
+            <span class="icon-close"></span>
+        </button>
+        <div class="popup__wrapper">
+            <form action="#" class="popup__form">
+                <div class="popup-inputs">
+                    <label class="input_wrapper">
+                        <span class="input-caption">Ваше имя</span>
+                        <input type="text" class="main_input" placeholder="Имя">
+                    </label>
+                    <label class="input_wrapper">
+                        <span class="input-caption">E-mail*</span>
+                        <input type="email" class="main_input" placeholder="ivanov@gmail.com" required>
+                    </label>
+                    <label class="input_wrapper">
+                        <span class="input-caption">Номер телефона*</span>
+                        <input type="tel" class="main_input" placeholder="+380934882556" required>
+                    </label>
+                    <label class="input_wrapper">
+                        <span class="input-caption">Вопрос первый в одну строку?</span>
+                        <input type="text" class="main_input" placeholder="Ваш ответ">
+                    </label>
+                    <label class="input_wrapper">
+                        <span class="input-caption">Вопрос второй в две строки, вопрос второй в две строки, вопрос второй в две строки?</span>
+                        <textarea class="main_input main_input-textarea" placeholder="Ваш ответ"></textarea>
+                    </label>
+                    <label class="input_wrapper">
+                        <span class="input-caption">Вопрос третий в одну строку?</p>
+                        <input type="text" class="main_input" placeholder="Ваш ответ">
+                    </label>
+                </div>
+                <button class="main_button-color js-button-decor">
+                    <span class="text">ОТПРАВИТЬ</span>
+                </button> 
+            </form>
+        </div>
+    </section>
+    
+    <!-- //Вопросы  -->
+    
+    <!-- Задайте вопрос  -->
+     
+    <section class="popup popup-questions" data-target="popup-questions">
+        <button class="js-close close__popup">
+            <span class="icon-close"></span>
+        </button>
+        <div class="popup__wrapper">
+            <h4 class="popup-caption">Задайте вопрос</h4>
+            <form action="#" class="popup__form">
+                <div class="popup-inputs">
+                    <label class="input_wrapper">
+                        <span class="input-caption">Ваше имя</span>
+                        <input type="text" class="main_input" placeholder="Имя">
+                    </label>
+                    <label class="input_wrapper">
+                        <span class="input-caption">E-mail*</span>
+                        <input type="email" class="main_input" placeholder="ivanov@gmail.com" required>
+                    </label>
+                    <label class="input_wrapper">
+                        <span class="input-caption">Ваш вопрос</span>
+                        <textarea class="main_input main_input-textarea" placeholder="Напишите вопрос..."></textarea>
+                    </label>
+                </div>
+                <button class="main_button-color js-button-decor">
+                    <span class="text">ОТПРАВИТЬ</span>
+                </button> 
+            </form>
+        </div>
+    </section>
+    
+    <!-- //Задайте вопрос  -->
+    
+    <!-- Блогадарность  -->
+    
+    <section class="popup popup-thanks" data-target="popup-thanks">
+        <button class="js-close close__popup">
+            <span class="icon-close"></span>
+        </button>
+        <div class="popup__wrapper">
+            <h4 class="popup-caption">Спасибо!</h4>
+            <p class="popup__info-text">Ваши ответы помогут нам повысить качество предоставляемых услуг</p>
+            <button class="main_button-color js-button-decor">
+                <span class="text">Ок</span>
+            </button>
+        </div>
+    </section>
+    
+    <!-- //Блогадарность  -->
+    <!-- Галерея  -->
+    
+    <section class="popup popup-gallery js-gallery" data-target="gallery">
+        <button class="js-close close__popup">
+            <span class="icon-close"></span>
+        </button>
+        <div class="popup-gallery__wrapper">
+            <button class="slider-button prev js-image-button-prev disabled"><span class="icon-slider-arrow-left"></span></button>
+            <button class="slider-button next js-image-button-next"><span class="icon-slider-arrow-right"></span></button>
+            <div class="popup-gallery__header js-gallery-info-container">
+                <h3 class="popup-gallery__name js-gallery-name"></h3>
+                <h5 class="popup-gallery__city js-gallery-city"></h5>
+            </div>
+            <div class="popup-gallery__general-img js-general-image">
+                <img src="./img/announcements-img-1.png" alt="Фото">
+            </div>
+            <ul class="popup-gallery__img-list product-page__img-list">
+                <li class="popup-gallery__img-item js-image active" data-index="1" data-name="Консультационный семинар для специалистов планово-экономической службы “Актуальная тематика" data-city="г.Харьков">
+                    <img src="./img/announcements-img-1.png" alt="Фото">
+                </li>
+                <li class="popup-gallery__img-item js-image" data-index="2" data-name="Семинар2" data-city="г.Киев">
+                    <img src="./img/announcements-img-2.png" alt="Фото">
+                </li>
+                <li class="popup-gallery__img-item js-image" data-index="3" data-name="Семинар3" data-city="г.Сумы">
+                    <img src="./img/announcements-img-3.png" alt="Фото">
+                </li>
+                <li class="popup-gallery__img-item js-image" data-index="4" data-name="Семинар4" data-city="г.Львов">
+                    <img src="./img/announcements-img-4.png" alt="Фото">
+                </li>
+                <li class="popup-gallery__img-item js-image" data-index="5" data-name="Семинар5" data-city="г.Днепр">
+                    <img src="./img/photo-gallery-img-1.png" alt="Фото">
+                </li>
+                <li class="popup-gallery__img-item js-image" data-index="6" data-name="Семинар6" data-city="г.Черкаси">
+                    <img src="./img/announcements-img-3.png" alt="Фото">
+                </li>
+                <li class="popup-gallery__img-item js-image" data-index="7" data-name="Семинар7" data-city="г.Ужгород">
+                    <img src="./img/announcements-img-4.png" alt="Фото">
+                </li>
+            </ul>
+        </div>
+        
+    </section>
+    
+    <!-- //Галерея  -->
+    <div class="overlay"></div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="./node_modules/vue-slider-component/dist-css/vue-slider-component.umd.min.js"></script>
+    <script src="./js/app.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+</html>
