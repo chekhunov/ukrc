@@ -665,7 +665,7 @@
               </p>
               <div class="box">
                 <p class="box__text js-timetwo" data-time="Jan 5, 2022 15:37:25">
-                  до начала осталось: <span id="countimer2" class="box__num box__num--first js-days"></span> дней <span
+                  до начала осталось: <span class="box__num box__num--first js-days"></span> дней <span
                     class="box__num js-hours"></span> часов
                 </p>
               </div>
@@ -727,7 +727,7 @@
             сфере охраны окружающей среды в правовую систему Украины</h3>
         </div>
 
-        <div class="event-page__sort-info event-page__sort-info--mobile">
+        <div class="event-page__sort-info">
           <div class="event-page__sort-info__item">
             <p class="type">
               <strong>Дата</strong>
@@ -741,8 +741,8 @@
                 до начала осталось:
 
                 <span class="box__inner">
-                  <span class="box__num box__num--first js-days"></span> дней
-                  <span class="box__num js-hours"></span> часов
+                  <span class="box__num box__num--first js-daystwo"></span> дней
+                  <span class="box__num js-hourstwo"></span> часов
                 </span>
               </p>
 
@@ -1593,7 +1593,7 @@
       if (distance < 0) {
         clearInterval(clearTimer);
         document.getElementById("demo").innerHTML = "EXPIRED";
-
+        // document.getElementById("").innerHTML = "EXPIRED";
       }
     }, 1000);
 

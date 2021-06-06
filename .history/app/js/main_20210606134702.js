@@ -985,4 +985,32 @@ window.addEventListener('DOMContentLoaded', function () {
     input.addEventListener('blur', mask, false);
     input.addEventListener('keydown', mask, false);
   });
+
+  // let getDataTwo = document.querySelector('.js-timetwo').getAttribute('data-time');
+  // var countDownDateTwo = new Date(`${getDataTwo}`).getTime();
+  // let setDaysTwo = document.querySelector('.js-daystwo');
+  // let setHoursTwo = document.querySelector('.js-hourstwo');
+
+  // var clearTimerTwo = setInterval(function () {
+  //   var nowTwo = new Date().getTime();
+  //   var distanceTwo = countDownDateTwo - nowTwo;
+  //   // Time calculations for days, hours, minutes and seconds
+  //   var daysTwo = Math.floor(distanceTwo / (1000 * 60 * 60 * 24));
+  //   var hoursTwo = Math.floor((distanceTwo % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+
+  //   if (daysTwo < 10) {
+  //     daysTwo = daysTwo;
+  //   }
+  //   if (hoursTwo < 10) {
+  //     hoursTwo = hoursTwo;
+  //   }
+
+  //   setDaysTwo.innerHTML = daysTwo;
+  //   setHoursTwo.innerHTML = hoursTwo;
+
+  //   if (distanceTwo < 0) {
+  //     clearInterval(clearTimerTwo);
+  //     document.getElementById('demo').innerHTML = 'EXPIRED';
+  //   }
+  // }, 1000);
 });
