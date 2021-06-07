@@ -30,7 +30,6 @@ gulp.task('serve', gulp.parallel('less'), function () {
   });
   gulp.watch('app/less/*.less', gulp.parallel('less'));
   gulp.watch('app/*.html').on('change', browserSync.reload);
-  // gulp.watch('UKRC/documents/*.html').on('change', browserSync.reload);
   gulp.watch('app/js/*.js').on('change', browserSync.reload);
 });
 
@@ -48,24 +47,3 @@ exports.default = function () {
   // watch('UKRC/documents/*.html').on('change', browserSync.reload);
   watch('app/js/*.js').on('change', browserSync.reload);
 };
-// gulp.task('less', function () {
-//   gulp
-//     .src('less/*.less')
-//     // gulp.src('../scss/*.scss')
-//     .pipe(less({ outputStyle: 'expanded' }).on('error', less.logError))
-//     .pipe(gulp.dest('css/'))
-//     .pipe(browserSync.stream());
-// });
-// gulp.task('default', ['serve']);
-
-// gulp.task('default', gulp.parallel('serve'), () =>
-//   gulp
-//     .src('css/main.css')
-//     .pipe(
-//       autoprefixer({
-//         browsers: ['last 2 version', 'safari 5', 'ie 10', 'opera 12.1', 'ios 7', 'android 4'],
-//         cascade: false,
-//       }),
-//     )
-//     .pipe(gulp.dest('css/autoprefixer')),
-// );

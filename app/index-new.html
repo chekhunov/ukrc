@@ -695,6 +695,7 @@
             </a>
             <button class="slider-button next"><span class="icon-slider-arrow-right"></span></button>
           </div>
+        </div>
       </section>
       <section class="reviews">
         <div class="reviews__wrapper container slider-infinity">
@@ -783,8 +784,10 @@
         <div class="notyfication__wrapper container">
           <h2 class="main-caption-m">Уведомления</h2>
           <p class="notyfication-sub">Как Вы хотели бы получать информацию о свежих мероприятиях?</p>
-          <form action="#" class="notyfication__form">
-            <div class="notyfication__list">
+          <div class="notyfication__inner">
+
+            <form action="#" class="notyfication__form-mail">
+              <!-- <div class="notyfication__list">
               <label class="notyfication__item">
                 <input class="noty-radio" type="radio" name="noty" value="noty-sms">
                 <span class="custome-radio"></span>
@@ -812,51 +815,145 @@
                   <p>Анонсы семинаров в web-браузере</p>
                 </div>
               </label>
-            </div>
-            <div class="notyfication-subscription">
-              <h5 class="notyfication-subscription__caption">Выберите интересующие Вас темы:</h5>
-              <div class="notyfication-subscription__list">
-                <label class="notyfication-subscription__item checkbox__wrapper">
-                  <input type="checkbox" value="Охрана окружающей среды" class="input-checkbox">
-                  <span class="custome-check">
-                    <span class="icon-active"></span>
-                  </span>
-                  <span class="text">Охрана окружающей среды</span>
-                </label>
-                <label class="notyfication-subscription__item checkbox__wrapper">
-                  <input type="checkbox" value="Охрана труда" class="input-checkbox">
-                  <span class="custome-check">
-                    <span class="icon-active"></span>
-                  </span>
-                  <span class="text">Охрана труда</span>
-                </label>
-                <label class="notyfication-subscription__item checkbox__wrapper">
-                  <input type="checkbox" value="Управление персоналом" class="input-checkbox">
-                  <span class="custome-check">
-                    <span class="icon-active"></span>
-                  </span>
-                  <span class="text">Управление персоналом</span>
-                </label>
-                <label class="notyfication-subscription__item checkbox__wrapper">
-                  <input type="checkbox" value="Экономика предприятия" class="input-checkbox">
-                  <span class="custome-check">
-                    <span class="icon-active"></span>
-                  </span>
-                  <span class="text">Экономика предприятия</span>
-                </label>
+            </div> -->
+              <div class="notyfication-subscription notyfication-subscription--mail">
+                <svg class="notyfication-subscription__icon" width="51" height="51" viewBox="0 0 51 51" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="25.5" cy="25.5" r="25.5" fill="#5C5DF7" />
+                  <path
+                    d="M32.64 19.125H18.36C17.3782 19.125 16.5839 19.8422 16.5839 20.7188L16.575 30.2812C16.575 31.1578 17.3782 31.875 18.36 31.875H32.64C33.6217 31.875 34.425 31.1578 34.425 30.2812V20.7188C34.425 19.8422 33.6217 19.125 32.64 19.125ZM32.64 30.2812H18.36V22.3125L25.5 26.2969L32.64 22.3125V30.2812ZM25.5 24.7031L18.36 20.7188H32.64L25.5 24.7031Z"
+                    fill="white" />
+                </svg>
+
+                <div class="notyfication-subscription__title">
+                  E-mail
+                </div>
+
+                <h5 class="notyfication-subscription__desc">Выберите тему для рассылки</h5>
+                <div class="notyfication-subscription__list">
+
+                  <label class="notyfication-subscription__item checkbox__wrapper">
+                    <input type="checkbox" value="Все темы" class="input-checkbox">
+                    <span class="custome-check">
+                      <span class="icon-active"></span>
+                    </span>
+                    <span class="text">Все темы</span>
+                  </label>
+
+                  <label class="notyfication-subscription__item checkbox__wrapper">
+                    <input type="checkbox" value="Управление персоналом" class="input-checkbox">
+                    <span class="custome-check">
+                      <span class="icon-active"></span>
+                    </span>
+                    <span class="text">Управление персоналом</span>
+                  </label>
+
+                  <label class="notyfication-subscription__item checkbox__wrapper">
+                    <input type="checkbox" value="Охрана окружающей среды" class="input-checkbox">
+                    <span class="custome-check">
+                      <span class="icon-active"></span>
+                    </span>
+                    <span class="text">Охрана окружающей среды</span>
+                  </label>
+
+                  <label class="notyfication-subscription__item checkbox__wrapper">
+                    <input type="checkbox" value="Экономика предприятия" class="input-checkbox">
+                    <span class="custome-check">
+                      <span class="icon-active"></span>
+                    </span>
+                    <span class="text">Экономика предприятия</span>
+                  </label>
+
+                  <label class="notyfication-subscription__item checkbox__wrapper">
+                    <input type="checkbox" value="Охрана труда" class="input-checkbox">
+                    <span class="custome-check">
+                      <span class="icon-active"></span>
+                    </span>
+                    <span class="text">Охрана труда</span>
+                  </label>
+
+                  <label class="notyfication-subscription__item checkbox__wrapper">
+                    <input type="checkbox" value="Новости блога" class="input-checkbox">
+                    <span class="custome-check">
+                      <span class="icon-active"></span>
+                    </span>
+                    <span class="text">Новости блога</span>
+                  </label>
+
+                </div>
+                <div class="notyfication-subscription__footer">
+                  <label for="noty-in" class="input_wrapper error">
+                    <span class="input-caption">Введите ваш E-mail</span>
+                    <!-- <span class="input-text-error">Пожалуйста, введите ваш e-mail в формате: ivanov@gmail.com</span> -->
+                  </label>
+                  <input id="noty-in" type="email" class="main_input" placeholder="ivanov@gmail.com">
+                  <button class="main_button-color js-button-decor" type="submit">
+                    <span class="text">Подписаться</span>
+                  </button>
+                </div>
               </div>
-              <div class="notyfication-subscription__footer">
-                <label class="input_wrapper error">
-                  <span class="input-caption">Введите ваш E-mail</span>
-                  <input type="email" class="main_input" placeholder="ivanov@gmail.com">
-                  <span class="input-text-error">Пожалуйста, введите ваш e-mail в формате: ivanov@gmail.com</span>
-                </label>
-                <button class="main_button-color js-button-decor" type="submit">
-                  <span class="text">Подписаться</span>
-                </button>
+            </form>
+
+            <div class="notyfication__socials">
+
+              <div class="notyfication__block">
+                <svg class="notyfication__icon" width="41" height="41" viewBox="0 0 41 41" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="20.5883" cy="20.5884" r="20" fill="#23A9E7" />
+                  <path
+                    d="M26.0049 16.1816L23.9929 25.9533C23.8411 26.643 23.4452 26.8147 22.8826 26.4897L19.8169 24.1633L18.3376 25.6284C18.1739 25.797 18.037 25.938 17.7215 25.938L17.9417 22.7227L23.6238 17.4353C23.8708 17.2084 23.5702 17.0828 23.2398 17.3096L16.2154 21.8644L13.1913 20.8897C12.5335 20.6782 12.5216 20.2123 13.3282 19.8874L25.1566 15.1946C25.7043 14.9831 26.1835 15.3203 26.0049 16.1816Z"
+                    fill="white" />
+                </svg>
+
+                <div class="notyfication__social-title">
+                  Telegram
+                </div>
+
+                <a class="notyfication__social-lnk" href="#">
+                  присоединиться
+                </a>
               </div>
+
+              <div class="notyfication__block">
+                <svg class="notyfication__icon" width="40" height="40" viewBox="0 0 40 40" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="20" cy="20" r="20" fill="#3DE66A" />
+                  <path
+                    d="M24.9031 15.0344C23.5938 13.7219 21.85 13 19.9969 13C16.1719 13 13.0594 16.1125 13.0594 19.9375C13.0594 21.1594 13.3781 22.3531 13.9844 23.4062L13 27L16.6781 26.0344C17.6906 26.5875 18.8313 26.8781 19.9938 26.8781H19.9969C23.8188 26.8781 27 23.7656 27 19.9406C27 18.0875 26.2125 16.3469 24.9031 15.0344ZM19.9969 25.7094C18.9594 25.7094 17.9437 25.4312 17.0594 24.9062L16.85 24.7812L14.6688 25.3531L15.25 23.225L15.1125 23.0063C14.5344 22.0875 14.2313 21.0281 14.2313 19.9375C14.2313 16.7594 16.8187 14.1719 20 14.1719C21.5406 14.1719 22.9875 14.7719 24.075 15.8625C25.1625 16.9531 25.8313 18.4 25.8281 19.9406C25.8281 23.1219 23.175 25.7094 19.9969 25.7094ZM23.1594 21.3906C22.9875 21.3031 22.1344 20.8844 21.975 20.8281C21.8156 20.7688 21.7 20.7406 21.5844 20.9156C21.4688 21.0906 21.1375 21.4781 21.0344 21.5969C20.9344 21.7125 20.8313 21.7281 20.6594 21.6406C19.6406 21.1313 18.9719 20.7312 18.3 19.5781C18.1219 19.2719 18.4781 19.2937 18.8094 18.6312C18.8656 18.5156 18.8375 18.4156 18.7937 18.3281C18.75 18.2406 18.4031 17.3875 18.2594 17.0406C18.1188 16.7031 17.975 16.75 17.8688 16.7438C17.7688 16.7375 17.6531 16.7375 17.5375 16.7375C17.4219 16.7375 17.2344 16.7812 17.075 16.9531C16.9156 17.1281 16.4688 17.5469 16.4688 18.4C16.4688 19.2531 17.0906 20.0781 17.175 20.1938C17.2625 20.3094 18.3969 22.0594 20.1375 22.8125C21.2375 23.2875 21.6687 23.3281 22.2188 23.2469C22.5531 23.1969 23.2437 22.8281 23.3875 22.4219C23.5312 22.0156 23.5312 21.6687 23.4875 21.5969C23.4469 21.5188 23.3313 21.475 23.1594 21.3906Z"
+                    fill="white" />
+                </svg>
+
+                <div class="notyfication__social-title">
+                  WhatsApp
+                </div>
+
+                <a class="notyfication__social-lnk" href="#">
+                  присоединиться
+                </a>
+              </div>
+
+              <div class="notyfication__block">
+                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="20" cy="20" r="20" fill="#7C5299" />
+                  <path
+                    d="M25.4212 14.3633C25.055 14.0434 23.5731 13.0236 20.2689 13.0099C20.2689 13.0099 16.3737 12.7884 14.4765 14.4398C13.4212 15.4405 13.0493 16.9086 13.0089 18.7268C12.9686 20.5449 12.9196 23.9515 16.3823 24.8756H16.3852L16.3823 26.2864C16.3823 26.2864 16.3592 26.8578 16.7571 26.9726C17.2357 27.1148 17.5183 26.6801 17.9767 26.2125C18.2276 25.9555 18.5736 25.5782 18.8359 25.2912C21.2059 25.4798 23.0253 25.0478 23.2328 24.985C23.7115 24.8373 26.4188 24.5092 26.8571 21.1026C27.3126 17.5867 26.6379 15.3666 25.4212 14.3633ZM21.8143 18.6365C21.8258 18.8717 21.4539 18.8881 21.4424 18.6529C21.4107 18.0515 21.1137 17.7589 20.5024 17.7261C20.2545 17.7124 20.2775 17.3597 20.5226 17.3734C21.327 17.4144 21.7739 17.8519 21.8143 18.6365ZM22.3996 18.9455C22.4284 17.7863 21.6644 16.8786 20.2141 16.7774C19.969 16.761 19.995 16.4083 20.2401 16.4247C21.9123 16.5395 22.8032 17.6304 22.7715 18.9537C22.7686 19.1888 22.3938 19.1779 22.3996 18.9455ZM23.7547 19.3118C23.7576 19.547 23.3828 19.5497 23.3828 19.3146C23.3655 17.0863 21.7999 15.8724 19.8998 15.8588C19.6548 15.856 19.6548 15.5061 19.8998 15.5061C22.0248 15.5197 23.7345 16.9114 23.7547 19.3118ZM23.4289 21.9939V21.9994C23.1175 22.5189 22.5351 23.093 21.9354 22.9098L21.9296 22.9016C21.3213 22.7403 19.8883 22.0404 18.983 21.3569C18.5159 21.0069 18.0892 20.5941 17.7605 20.1977C17.4635 19.845 17.1637 19.4267 16.8725 18.9236C16.2583 17.871 16.1228 17.4008 16.1228 17.4008C15.9297 16.8321 16.5322 16.2798 17.0829 15.9845H17.0887C17.354 15.8533 17.6077 15.897 17.7778 16.0912C17.7778 16.0912 18.1353 16.4958 18.2881 16.6954C18.4323 16.8813 18.6255 17.1793 18.7264 17.3461C18.9022 17.6441 18.7927 17.9476 18.6197 18.0733L18.2737 18.3358C18.0978 18.4698 18.1209 18.7186 18.1209 18.7186C18.1209 18.7186 18.6341 20.5586 20.5515 21.0234C20.5515 21.0234 20.8138 21.0452 20.9551 20.8784L21.2319 20.5504C21.3645 20.3863 21.6846 20.2824 21.9988 20.4492C22.4227 20.6761 22.9618 21.0288 23.3193 21.3487C23.5212 21.5045 23.5673 21.7424 23.4289 21.9939Z"
+                    fill="white" />
+                </svg>
+
+                <div class="notyfication__social-title">
+                  Viber
+                </div>
+
+                <a class="notyfication__social-lnk" href="#">
+                  присоединиться
+                </a>
+              </div>
+
             </div>
-          </form>
+
+            <img class="notyfication__image" src="./img/noty.jpg" alt="notification image">
+
+          </div>
         </div>
       </section>
       <section class="important-to-us">
