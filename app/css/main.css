@@ -4013,7 +4013,7 @@ body {
   }
   .general-info-event__info {
     padding: 30px;
-    width: calc(52% - 20px);
+    width: 100% !important;
   }
   .general-info-event__info__img {
     margin-bottom: 10px;
